@@ -40,6 +40,7 @@ app.get("/placesinacity",async(req,res)=>{
         placeCity:"Delhi",
         placeImage:"https://i.pinimg.com/originals/4a/67/35/4a673520927a900a3b37a1ad233fe1df.jpg"
     }]
-    res.send({status:200,result:arr})
+    const result = arr.map(({ placeName, placeImage }) => ({ placeName, placeImage }));
+    res.send({status:200,result})
 })
 app.listen(3000,()=>console.log("server is listening on port 3000"))
