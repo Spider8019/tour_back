@@ -4,109 +4,11 @@ const arr = [
       placeCity: 'Ayodhya',
       placeImage:
         'https://i.pinimg.com/originals/39/aa/eb/39aaebc33872252aed06ee1af42fc79b.jpg',
+      placeContent:"Ayodhya, town in northern India that is known as a sacred city and the birthplace of Rama in Hinduism and as a historical center of Buddhism. On a site significant to both Hindus and Muslims was a Mughal-era mosque, the Babri Masjid, which was destroyed in 1992 amid interreligious tensions. After a 2019 Supreme Court verdict granting the site to Hindus, a new Ram temple is under construction, with an inauguration date of January 22, 2024. Ayodhya lies on the Ghaghara River, also known as Sarayu or Sarju in the lower course, just east of Faizabad in south-central Uttar Pradesh state. An ancient town, Ayodhya is regarded as one of the seven sacred cities of the Hindus, revered because of its association in the great Indian epic poem Ramayana with the birth of Rama and with the rule of his father, Dasharatha. According to this source, the town was prosperous and well fortified and had a large population.",
+      carouselImages:['https://i.pinimg.com/originals/b0/9b/b8/b09bb805a1a96e8586edb0a6109a31b9.jpg','https://i.pinimg.com/736x/79/ab/2f/79ab2f9a570a971ea0b75b6d79158202.jpg'],
+      entryFees:0
     },
-    {
-      placeName: 'Kanak Bhawan',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://i.pinimg.com/originals/ca/75/2f/ca752fc70b74b2f2b7f8692e708ab737.jpg',
-    },
-    {
-      placeName: 'Ayodhya Junction',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://images.indianexpress.com/2020/08/ayodhya-railways-station.jpg',
-    },
-    {
-      placeName: 'Sree Ram Janmabhoomi Mandir',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://i.pinimg.com/originals/39/aa/eb/39aaebc33872252aed06ee1af42fc79b.jpg',
-    },
-    {
-      placeName: 'Ambedkar Park',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/2f/d6/86/2fd686117463355983f8b0690d161b3f.jpg',
-    },
-    {
-      placeName: 'Hanumat Dham',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://safarjankari.com/wp-content/uploads/2023/01/Hanumant-Dham-Lucknow.jpg',
-    },
-    {
-      placeName: 'Bda Imambara',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/ab/30/6d/ab306db9a840be8a393079754228cb71.jpg',
-    },
-    {
-      placeName: 'Chota Imambara',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/24/db/dc/24dbdc1379f9e32a4a0ad682096a3655.jpg',
-    },
-    {
-      placeName: 'Lotus Temple',
-      placeCity: 'Delhi',
-      placeImage:
-        'https://i.pinimg.com/originals/4a/67/35/4a673520927a900a3b37a1ad233fe1df.jpg',
-    },
-    {
-      placeName: 'Sree Ram Janmabhoomi Mandir',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://i.pinimg.com/originals/39/aa/eb/39aaebc33872252aed06ee1af42fc79b.jpg',
-    },
-    {
-      placeName: 'Kanak Bhawan',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://i.pinimg.com/originals/ca/75/2f/ca752fc70b74b2f2b7f8692e708ab737.jpg',
-    },
-    {
-      placeName: 'Ayodhya Junction',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://images.indianexpress.com/2020/08/ayodhya-railways-station.jpg',
-    },
-    {
-      placeName: 'Sree Ram Janmabhoomi Mandir',
-      placeCity: 'Ayodhya',
-      placeImage:
-        'https://i.pinimg.com/originals/39/aa/eb/39aaebc33872252aed06ee1af42fc79b.jpg',
-    },
-    {
-      placeName: 'Ambedkar Park',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/2f/d6/86/2fd686117463355983f8b0690d161b3f.jpg',
-    },
-    {
-      placeName: 'Hanumat Dham',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://safarjankari.com/wp-content/uploads/2023/01/Hanumant-Dham-Lucknow.jpg',
-    },
-    {
-      placeName: 'Bda Imambara',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/ab/30/6d/ab306db9a840be8a393079754228cb71.jpg',
-    },
-    {
-      placeName: 'Chota Imambara',
-      placeCity: 'Lucknow',
-      placeImage:
-        'https://i.pinimg.com/originals/24/db/dc/24dbdc1379f9e32a4a0ad682096a3655.jpg',
-    },
-    {
-      placeName: 'Lotus Temple',
-      placeCity: 'Delhi',
-      placeImage:
-        'https://i.pinimg.com/originals/4a/67/35/4a673520927a900a3b37a1ad233fe1df.jpg',
-    },
+    
   ]
 
   module.exports=arr
