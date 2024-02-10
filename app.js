@@ -10,9 +10,10 @@ app.get('/placesinacity', async (req, res) => {
   res.send(result )
 })
 app.get('/placefromacity', async (req, res) => {
+  // res.send(arr)
   const result = arr
-    .filter((item) => item.placeCity == req.query.placeName)
-    .map(({ placeName, placeImage }) => ({ placeName, placeImage }))
+    .filter((item) => item.placeName == req.query.placeName)
+    // res.send(result)
   res.send(result[0])
 })
 app.listen(3000, () => console.log('server is listening on port 3000'))
