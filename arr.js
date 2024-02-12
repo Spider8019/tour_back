@@ -67,6 +67,38 @@ const arr = [
       },
     },
   },
+  {
+    placeId: 3,
+    placeName: 'Chota Imambara',
+    placeCity: 'Lucknow',
+    placeImage:
+      'https://i.pinimg.com/564x/24/db/dc/24dbdc1379f9e32a4a0ad682096a3655.jpg',
+    placeLocation: {
+      latitude: 26.874386977796195,
+      longitude: 80.90462587996397,
+      text: '447, Husainabad, Lucknow, Uttar Pradesh 226003, India',
+    },
+    placeContent: {
+      content1:
+        "<div><strong>Brief History</strong><p>The Chhota Imambara was constructed in 1838 by Muhammad Ali Shah, the third Nawab of Awadh, as a gathering place for Shia Muslims. The Imambara was intended to be both his mother's and his own mausoleum; his mother is interred next to him in this esteemed structure. The Imambara is exquisitely decked out for major occasions, particularly Muharram, with chandeliers and decorations. Because of the monument's lavish decorations during particular occasions, European tourists and authors also refer to this 19th-century structure as the 'Palace of Lights.'</p></div>",
+      content2:
+        "<div><strong>Architectural&nbsp;</strong><p>Architecturally, the Chota Imambara is considered to be a more magnificent wonder than its bigger counterpart, the Bara Imambara. With its baroque carvings and exquisite calligraphy, the Chota Imambara surpasses every other heritage structure in Lucknow. The magnificent structure has been inspired by the design of the Charbagh pattern, with a single stream running through the centre of the garden. It is an amalgamation of the elements of Persian and Indo-Islamic styles of architecture.\n\nInterior\nThe interiors of this artistic monument are decorated with delicate Arabic glass work and calligraphy. Ornately designed with a gilded golden dome, exquisite chandeliers specially brought from Belgium, colourful stuccos and gilt-edged mirrors, this attraction is an architectural dream which has been breathed life into.\n\nPanjetan - Five Doorways\nThe five doorways of the Chhota Imambara emphasize the significance of 'Panjetan' or the holy five. The Imambara comprises of two halls and a Shehnasheen, which is a platform where the Zarih of Imam Husain is kept. The large green and white-bordered hall of Azakhana is richly decorated with chandeliers and a good number of crystal glass lamp-stands.\n\nMausoleums\nThe monument houses the tomb of Muhammad Ali Shah as well as four graves; of the son, daughter, son in law and of the lady. This structure thus becomes a small-scale copy of the majestic Taj Mahal. The walls are adorned with Arabic calligraphy and never fail to please onlookers. The water bodies and fountains inside the Imambara get water supply from the River Gomti.\n\nHusainabad Mosque\nThe Husainabad Mosque which can also be found inside the main monument is constructed on a raised platform with two grand minarets on the edge of the platform. The mosque is decorated beautifully and intricately with floral designs and Quranic Calligraphy.<p></div>",
+    },
+    moreImages: [
+      'https://i.pinimg.com/564x/42/f7/8e/42f78e620f831f99779f5fabedfb58c1.jpg',
+      'https://i.pinimg.com/564x/90/59/cb/9059cbb1021b4d6e822ba777319bbbe8.jpg',
+    ],
+    entryFees: {
+      indian: {
+        child: 25,
+        adult: 25,
+      },
+      foreigner: {
+        child: 500,
+        adult: 500,
+      },
+    },
+  },
 ]
 
 module.exports = arr
