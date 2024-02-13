@@ -42,8 +42,7 @@ const arr = [
     placeName: 'Bara Imambara',
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
-    placeImage:
-      'https://i.pinimg.com/564x/e0/72/c3/e072c385f25f076f840179609a5c2df3.jpg',
+    placeImage:'https://i.pinimg.com/564x/e0/72/c3/e072c385f25f076f840179609a5c2df3.jpg',
     placeLocation: {
       latitude: 26.869512328450885,
       longitude: 80.91260842414347,
