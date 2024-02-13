@@ -35,7 +35,7 @@ const arr = [
         adult: 0,
       },
     },
-    hashtag: 'uptourism',
+    // hashtag: 'uptourism',
   },
   {
     placeId: 2,
