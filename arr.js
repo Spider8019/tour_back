@@ -1,5 +1,5 @@
 //monument,park
-//timing - weekdays, weekends (6:30 AM - 11:00PM)
+//timing - [weekdays, weekends] (6:30 AM - 11:00PM) - IF list has only one time range, then it means it is for all 7 days
 
 const arr = [
   {
@@ -7,8 +7,7 @@ const arr = [
     placeName: 'Husainabad Clock Tower',
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
-    placeImage:
-      'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
+    placeImage:'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
     placeLocation: {
       latitude: 26.874032316871155,
       longitude: 80.90803425112806,
@@ -140,6 +139,7 @@ const arr = [
       },
     },
     hashtag: 'sandiegozoo',
+    timings:["9:00 AM - 6:00 PM"]
     // placeTimings: [],
   },
 ]
