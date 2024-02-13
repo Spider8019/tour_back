@@ -8,7 +8,7 @@ const arr = [
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
     placeTimings:
-      'https://images.pexels.com/photos/13084084/pexels-photo-13084084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
     placeLocation: {
       latitude: 26.874032316871155,
       longitude: 80.90803425112806,
