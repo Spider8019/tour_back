@@ -7,7 +7,7 @@ const arr = [
     placeName: 'Husainabad Clock Tower',
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
-    placeTimings:
+    placeImage:
       'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
     placeLocation: {
       latitude: 26.874032316871155,
@@ -35,7 +35,7 @@ const arr = [
         adult: 0,
       },
     },
-    // hashtag: 'uptourism',
+    hashtag: 'uptourism',
   },
   {
     placeId: 2,
