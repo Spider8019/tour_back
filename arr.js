@@ -1,8 +1,11 @@
+//monument,park
+
 const arr = [
   {
     placeId: 1,
     placeName: 'Husainabad Clock Tower',
     placeCity: 'Lucknow',
+    placeCateogy: 'Monument',
     placeImage:
       'https://images.pexels.com/photos/13084084/pexels-photo-13084084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     placeLocation: {
@@ -36,6 +39,7 @@ const arr = [
     placeId: 2,
     placeName: 'Bara Imambara',
     placeCity: 'Lucknow',
+    placeCateogy: 'Monument',
     placeImage:
       'https://i.pinimg.com/564x/e0/72/c3/e072c385f25f076f840179609a5c2df3.jpg',
     placeLocation: {
@@ -71,6 +75,7 @@ const arr = [
     placeId: 3,
     placeName: 'Chota Imambara',
     placeCity: 'Lucknow',
+    placeCateogy: 'Monument',
     placeImage:
       'https://i.pinimg.com/564x/24/db/dc/24dbdc1379f9e32a4a0ad682096a3655.jpg',
     placeLocation: {
@@ -103,6 +108,7 @@ const arr = [
     placeId: 4,
     placeName: 'Nawab Wajid Ali Shah Zoological Garden',
     placeCity: 'Lucknow',
+    placeCateogy: 'Park',
     placeImage:
       'https://www.lucknowzoo.com/images/gallary/2.png',
     placeLocation: {
@@ -119,6 +125,7 @@ const arr = [
     moreImages: [
       'https://www.lucknowzoo.com/images/map_new.jpg',
       'https://www.lucknowzoo.com/images/gallary/5.jpg',
+      'https://www.lucknowzoo.com/images/map.png',
       'https://www.lucknowzoo.com/images/gallary/4.jpg',
     ],
     entryFees: {
@@ -131,6 +138,7 @@ const arr = [
         adult: 40,
       },
     },
+    hashtag:"sandiegozoo"
   },
 ]
 
