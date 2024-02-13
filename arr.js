@@ -99,6 +99,39 @@ const arr = [
       },
     },
   },
+  {
+    placeId: 4,
+    placeName: 'Nawab Wajid Ali Shah Zoological Garden',
+    placeCity: 'Lucknow',
+    placeImage:
+      'https://www.lucknowzoo.com/images/gallary/2.png',
+    placeLocation: {
+      latitude: 26.845442749881567, 
+      longitude: 80.9517168132313,
+      text: 'Nawab Wajid Ali Shah Zoological Garden, Hazratganj Road, Opp to Civil Hospital, Lucknow, Uttar Pradesh, 226001, India',
+    },
+    placeContent: {
+      content1:
+        "<div><strong>Brief History</strong><p>On November 29, 1921, this zoological park was founded to honour the Prince of Wales' visit to Lucknow. Its founding was the brainchild of Sir Harcourt Butler, the governor at the time. Nawab Nasiruddin Haider, the Awadh Nawab at the time, founded the compound in the 18th century as a mango plantation. It was referred to as Banarasi Bagh back then. The locals still refer to it as Banarasi Bagh in colloquial English. A Baradari was constructed here in the evening by the Nawabs, in remembrance of the once-famous Awadh evening. It still stands in the centre of the zoological garden, full of grandeur and majesty.'</p></div>",
+      content2:
+        "<div><strong>Criminal Office in Zoological Park</strong><p>1 -  Teasing, disturbing and feeding the wildlife in any way. \n\n2 - Putting polythene/spreading garbage. \n\n3 - Bringing firearms and pets/birds. \n\n4 - Burning fire and preparing food etc.\n\n5 - Playing the tranjister and tape recorder. High voice speaking and shouting.\n\n6 - Playing games like cricket, football etc.\n\n7 - Consuming narcotics.\n\n8 - Plucking of flowers and damage to trees and orchards.\n\n9 - According to Section 38J of Wildlife Protection Act, in the Zoological Garden, violation of the above rules and imprisonment for 06 months and fine up to Rs 2000 / - and fine for 01 year for violating again and fine of Rs 5000 / - Will be done.<p></div>",
+    },
+    moreImages: [
+      'https://www.lucknowzoo.com/images/map_new.jpg',
+      'https://www.lucknowzoo.com/images/gallary/5.jpg',
+      'https://www.lucknowzoo.com/images/gallary/4.jpg',
+    ],
+    entryFees: {
+      indian: {
+        child: 80,
+        adult: 40,
+      },
+      foreigner: {
+        child: 80,
+        adult: 40,
+      },
+    },
+  },
 ]
 
 module.exports = arr
