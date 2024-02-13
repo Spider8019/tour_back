@@ -7,7 +7,8 @@ const arr = [
     placeName: 'Husainabad Clock Tower',
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
-    placeImage:'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
+    placeImage:
+      'https://i.pinimg.com/736x/87/f1/69/87f16936c2db3e798bd81778ff553651.jpg',
     placeLocation: {
       latitude: 26.874032316871155,
       longitude: 80.90803425112806,
@@ -41,7 +42,8 @@ const arr = [
     placeName: 'Bara Imambara',
     placeCity: 'Lucknow',
     placeCateogy: 'Monument',
-    placeImage:'https://i.pinimg.com/564x/e0/72/c3/e072c385f25f076f840179609a5c2df3.jpg',
+    placeImage:
+      'https://i.pinimg.com/564x/e0/72/c3/e072c385f25f076f840179609a5c2df3.jpg',
     placeLocation: {
       latitude: 26.869512328450885,
       longitude: 80.91260842414347,
@@ -139,7 +141,47 @@ const arr = [
       },
     },
     hashtag: 'sandiegozoo',
-    timings:["9:00 AM - 6:00 PM"]
+    timings: ['9:00 AM - 6:00 PM'],
+    // placeTimings: [],
+  },
+  {
+    placeId: 5,
+    placeName: 'Sree Ram Janmabhoomi Mandir',
+    placeCity: 'Ayodhya',
+    placeCateogy: 'Holy Place',
+    placeImage:
+      'https://i.pinimg.com/736x/d5/c1/6e/d5c16e1d002ce7b9b16ae3ea3f860dad.jpg',
+    placeLocation: {
+      latitude: 26.7964166158453,
+      longitude: 82.19436675287875,
+      text: 'Sai Nagar, Ayodhya, Uttar Pradesh 224123, India',
+    },
+    placeContent: {
+      content1:
+        "<div><strong>Brief History</strong><p>The Shri Ram Janmabhoomi Teerth Kshetra trust began the first phase of construction of the Ram Temple in March 2020. On 25 March 2020, Ram's idol was moved to a temporary location in the presence of Chief Minister Yogi Adityanath. Larsen & Toubro offered to oversee the design and construction of the temple free of cost and is the contractor of the project. Central Building Research Institute, National Geophysical Research Institute and the Indian Institute of Technology (such as those Bombay, Guwahati, and Madras) are assisting in areas such as soil testing, concrete and design. Reports emerged that the Indian Space Research Organisation (ISRO) had identified a stream of the Sarayu which flows under the temple. Tata Consulting Engineers has been designated as a project management consultant.        </p></div>",
+      content2:
+        '<div><strong>Facts to Know</strong><p>Total Area: 2.7 Acres\nBuilt-up Area: 57,400 Sq. ft.\nLength (East-West): 380 Feet\nFloors: 3 (20 ft. each)\nWidth: 250 Feet\nHeight: 161 feet\nPillars: 39\nDoors: 44\nMandap (Hall): 5 (Nritya Mandap, Rang Mandap, Sabha Mandap, Prarthna and Kirtan Mandap)\nParkota: 732 meters x 14 feet (Rectangular compound wall surrounds the temple)\nCorner Temples: 4 (Surya Dev, Devi Bhagwati, Ganesh Bhagwan and Bhagwan Shiv)\nNorthern Arm Temple: Maa Annapurna\nSouthern Arm Temple: Lord Hanuman\nProposed Temples in Complex: Maharshi Valmiki, Maharshi Vashishtha, Maharshi Vishwamitra, Maharshi Agastya, Nishad Raj, Mata Shabri and Devi Ahilya\nAn ancient Mandir of Bhagwan Shiv has been restored at Kuber Tila, along with the installation of Jatayu statue\nA 21-foot-high granite plinth constructed to protect against ground moisture\nNo iron is used anywhere in the temple.        <p></div>',
+    },
+    moreImages: [
+      'https://shrirammandirayodhya.com/wp-content/uploads/2022/01/rammandir.png',
+      'https://shrirammandirayodhya.com/wp-content/uploads/2024/02/Ram-Mandir-full-Model.jpeg',
+      'https://i.pinimg.com/736x/cf/c6/16/cfc61640425edb3a4321fa43c86eec33.jpg',
+      'https://i.pinimg.com/736x/9d/d2/b6/9dd2b63426ce4a31d3902f9349e48412.jpg',
+      'https://i.pinimg.com/736x/90/db/a4/90dba40bb77fbd1a3dd54c6df0f406af.jpg',
+      'https://i.pinimg.com/564x/40/5b/40/405b4094c6ad165ee92e2a427575b9cf.jpg'
+    ],
+    entryFees: {
+      indian: {
+        child: 0,
+        adult: 0,
+      },
+      foreigner: {
+        child: 0,
+        adult: 0,
+      },
+    },
+    hashtag: 'hinduism',
+    timings: ['6:30 AM - 10:00 PM'],
     // placeTimings: [],
   },
 ]
