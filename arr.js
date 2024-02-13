@@ -141,7 +141,7 @@ const arr = [
       },
     },
     hashtag: 'sandiegozoo',
-    placeTimings: [],
+    // placeTimings: [],
   },
 ]
 
