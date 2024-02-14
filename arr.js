@@ -184,6 +184,45 @@ const arr = [
     timings: ['6:30 AM - 10:00 PM'],
     // placeTimings: [],
   },
+  {
+    placeId: 6,
+    placeName: 'Bangaram',
+    placeCity: 'Lakshadweep',
+    placeCateogy: 'island',
+    placeImage:
+      'https://pbs.twimg.com/media/GC_GRZkbIAAvLPY?format=jpg&name=large',
+    placeLocation: {
+      latitude:10.942509329212488,
+      longitude: 72.28783551032463,
+      text: 'Bangaram, Lakshadweep 682553, India',
+    },
+    placeContent: {
+      content1:
+        "<div><strong>Tips on trips</strong><p>The closest airport from Bangaram Island is Agatti Airport, and the second closest is Cochin International Airport. The airport is well connected to Bangalore, Kochi, and Chennai via Air India flights. The best time to enjoy the beauty and beaches of Bangaram is Monsoon and Winter season. Monsoon season doesn’t affect Bangaram and Agatti islands, as they can be accessed via flights from Kochi.\n\n Things to do \b 1-Watching Sunset\b2-Dinner at Beach\b3-Subaa Diving</p></div>",
+      content2:
+        '<div><strong>PM Modi Tweet</strong><p> For those who wish to embrace the adventurer in them, Lakshadweep has to be on your list.\b\b\bDuring my stay, I also tried snorkelling - what an exhilarating experience it was!<p></div>',
+    },
+    moreImages: [
+      'https://cdn.s3waas.gov.in/s358238e9ae2dd305d79c2ebc8c1883422/uploads/bfi_thumb/2018031548-olw9soliylet3catbd7x0el35s43laahqenx7oc7t6.jpg',
+      'https://cdn.s3waas.gov.in/s358238e9ae2dd305d79c2ebc8c1883422/uploads/bfi_thumb/2018031517-olw9smpukxc8g4djmcenvf25z0dd5w3125cy94f05m.jpg',
+      'http://lakshadweepvoyage.com/wp-content/uploads/2017/08/bangaaram-banner.jpg',
+      'https://assets.traveltriangle.com/blog/wp-content/uploads/2017/07/Go-adventures-and-try-scuba-diving-kb6592.jpg',
+      'https://pbs.twimg.com/media/GC_Gf8pbsAAgJ18?format=jpg&name=large'
+    ],
+    entryFees: {
+      indian: {
+        child: 0,
+        adult: 0,
+      },
+      foreigner: {
+        child: 0,
+        adult: 0,
+      },
+    },
+    hashtag: 'beaches',
+    // timings: ['6:30 AM - 10:00 PM'],
+    // placeTimings: [],
+  },
 ]
 
 module.exports = arr
