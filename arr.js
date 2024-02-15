@@ -1,5 +1,6 @@
 //monument,park
 //timing - [weekdays, weekends] (6:30 AM - 11:00PM) - IF list has only one time range, then it means it is for all 7 days
+//links - optional
 
 const arr = [
   {
@@ -221,7 +222,6 @@ const arr = [
     },
     hashtag: 'beaches',
     // timings: ['6:30 AM - 10:00 PM'],
-    // placeTimings: [],
   },
 ]
 
