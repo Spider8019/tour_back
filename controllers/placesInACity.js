@@ -1,18 +1,19 @@
 const Place = require('../models/attractions')
 
 exports.getAllPlacesInACity = (req, res) => {
-  Place.getAllData()
-    .then((data) => {
-        // console.log(data)
-      const result = data
-        .filter((item) => item.placeCity == req.query.cityName)
-        .map(({ placeName, placeImage }) => ({ placeName, placeImage }))
-      res.send(result)
-    })
-    .catch((err) => {
-      console.error(err)
-      res.status(500).send('Internal Server Error' +err)
-    })
+  res.send("Adas")
+  // Place.getAllData()
+  //   .then((data) => {
+  //       // console.log(data)
+  //     const result = data
+  //       .filter((item) => item.placeCity == req.query.cityName)
+  //       .map(({ placeName, placeImage }) => ({ placeName, placeImage }))
+  //     res.send(result)
+  //   })
+  //   .catch((err) => {
+  //     console.error(err)
+  //     res.status(500).send('Internal Server Error' +err)
+  //   })
 }
 
 exports.addAPlacesInACity = (req, res) => {
