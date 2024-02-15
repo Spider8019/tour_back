@@ -1,14 +1,11 @@
 const express = require('express')
 const arr = require('./arr')
 const app = express()
-const mongooseConn = require('./connections/mongoose')
+const {connectDB} = require('./connections/mongoose')
 const cors = require('cors')
 
 var placesInACityRouter = require('./routes/placesInACity')
-
-mongooseConn.once('open', function () {
-  console.log('MongoDB database connection established successfully')
-})
+connectDB()
 
 app.use(cors())
 app.use(express.json())

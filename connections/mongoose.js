@@ -1,13 +1,48 @@
+const mongoose = require('mongoose')
+const dotenv = require("dotenv");
+dotenv.config()
 
 
-var mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://spider8019official:spider8019official@cluster0.ptqucsb.mongodb.net/nodeapp');
-var conn = mongoose.connection
-conn.on('connected', function () {
-  console.log('database is connected successfully')
-})
-conn.on('disconnected', function () {
-  console.log('database is disconnected successfully')
-})
-conn.on('error', console.error.bind(console, 'connection error:'))
-module.exports = conn
+mongoose.Promise= global.Promise;
+const connect = mongoose.connection;
+mongoose.set('strictQuery', true)
+
+
+const connectDB = async()=>{
+    const url = 'mongodb+srv://spider8019official:spider8019official@cluster0.ptqucsb.mongodb.net/nodeapp'
+   
+    connect.on('connected', async()=>{
+        console.log('MongoDb Connection Established')
+    })
+    connect.on('reconnected', async()=>{
+        console.log('MongoDB Connection Reestablished')
+    })
+    connect.on('disconnected',()=>{
+        console.log('MongoDB Connection Disconnected')
+        console.log('Trying to reconnect to Mongo...')
+
+
+        setTimeout(()=>{
+            mongoose.connect('mongodb+srv://spider8019official:spider8019official@cluster0.ptqucsb.mongodb.net/nodeapp',{
+                keepAlive: true,
+                socketTimeourMS: 3000,
+                connectTimeoutMS: 3000
+            })
+        }, 3000)
+    })
+    connect.on('close',() =>{
+        console.log('Mongo Connection Closed')
+    });
+    connect.on('error', (error) => {
+        console.log('Mongo Connection Error: '+ error)
+    })
+    await mongoose
+    .connect(url,{
+        useNewurlParser: true,
+        useUnifiedTopology: true
+    })
+    .catch((error) => console.log(error))
+}
+
+
+module.exports = {connectDB}
