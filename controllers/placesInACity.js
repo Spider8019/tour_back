@@ -3,7 +3,7 @@ const Place = require('../models/attractions')
 exports.getAllPlacesInACity = (req, res) => {
   Place.getAllData()
     .then((data) => {
-        console.log(data)
+        // console.log(data)
       const result = data
         .filter((item) => item.placeCity == req.query.cityName)
         .map(({ placeName, placeImage }) => ({ placeName, placeImage }))
