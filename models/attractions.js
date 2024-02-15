@@ -52,4 +52,7 @@ module.exports = {
   getAllData: function () {
     return PlaceTable.find({}).exec()
   },
+  getPlaceByName: function (placeName) {
+    return PlaceTable.findOne({ placeName: placeName }).exec()
+  },
 }
