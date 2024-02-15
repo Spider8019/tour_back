@@ -10,7 +10,7 @@
 // });
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://spider8019official:spider8019official@cluster0.ptqucsb.mongodb.net/nodeapp', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://spider8019official:spider8019official@cluster0.ptqucsb.mongodb.net/nodeapp');
 var conn = mongoose.connection
 conn.on('connected', function () {
   console.log('database is connected successfully')
