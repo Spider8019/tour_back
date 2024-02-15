@@ -37,10 +37,7 @@ const connectDB = async()=>{
         console.log('Mongo Connection Error: '+ error)
     })
     await mongoose
-    .connect(url,{
-        useNewurlParser: true,
-        useUnifiedTopology: true
-    })
+    .connect(url)
     .catch((error) => console.log(error))
 }
 
