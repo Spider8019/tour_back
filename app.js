@@ -18,6 +18,8 @@ app.use('/placesinacity', placesInACityRouter)
 app.get("/",async(req,res)=>{
   res.send("Hello world")
 })
+
+
 app.get('/placefromacity', async (req, res) => {
   const result = arr.filter((item) => item.placeName == req.query.placeName)
   res.send(result[0])
