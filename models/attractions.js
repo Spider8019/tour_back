@@ -2,17 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const entryFeesSchema = new Schema(
-  {
-    indian: {
-      child: { type: Number, required: true },
-      adult: { type: Number, required: true },
-    },
-    foreigner: {
-      child: { type: Number, required: true },
-      adult: { type: Number, required: true },
-    },
-  },
-  { _id: false },
+
 )
 
 const placeSchema = new Schema({
@@ -31,10 +21,22 @@ const placeSchema = new Schema({
     content_2: { type: String, required: true },
   },
   moreImages: { type: [String], required: true },
-  entryFees: { entryFeesSchema },
+  entryFees: {
+    indian: {
+      child: { type: Number, required: true },
+      adult: { type: Number, required: true },
+    },
+    foreigner: {
+      child: { type: Number, required: true },
+      adult: { type: Number, required: true },
+    },
+  },
   hashtag: { type: String },
   timings: { type: [String] },
   links: { type: [String] },
+  verified:{type:Boolean,default:false}
+}, {
+  timestamps: true
 })
 
 const PlaceTable = mongoose.model('Place', placeSchema)
@@ -55,4 +57,7 @@ module.exports = {
   getPlaceByName: function (placeName) {
     return PlaceTable.findOne({ placeName: placeName }).exec()
   },
+  getPlaceByCategory: function (placeCateogy) {
+    return PlaceTable.find({ placeCategory }).exec()
+  }
 }

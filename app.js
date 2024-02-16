@@ -5,6 +5,7 @@ const { connectDB } = require('./connections/mongoose')
 const cors = require('cors')
 
 var placesInACityRouter = require('./routes/placesInACity')
+var findPlacesByCategoryRouter = require("./routes/findPlacesByCategory")
 var placeFromACityRouter = require('./routes/placefromacity')
 connectDB()
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/placesinacity', placesInACityRouter)
 app.use('/placefromacity', placeFromACityRouter)
+app.use('/placesbycategory',findPlacesByCategoryRouter)
 
 app.get('/', async (req, res) => {
   res.send('Hello world')
