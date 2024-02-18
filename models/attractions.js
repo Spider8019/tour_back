@@ -6,6 +6,7 @@ const entryFeesSchema = new Schema(
 )
 
 const placeSchema = new Schema({
+  placeVisit:{type:Number,default:0},
   placeId: { type: Number, required: true, unique: true },
   placeName: { type: String, required: true, unique: true },
   placeCity: { type: String, required: true },
@@ -55,9 +56,13 @@ module.exports = {
     return PlaceTable.find({}).exec()
   },
   getPlaceByName: function (placeName) {
-    return PlaceTable.findOne({ placeName: placeName }).exec()
+    return PlaceTable.findOneAndUpdate(
+      { placeName: placeName },
+      { $inc: { placeVisit: 1 } }, // Increment placeVisit by 1
+      { new: true } // Return the updated document
+    ).exec()
   },
-  getPlaceByCategory: function (placeCateogy) {
-    return PlaceTable.find({ placeCategory }).exec()
+  getPlacesByProvidedFilter: function (filter) {
+    return PlaceTable.find({...filter}).exec()
   }
 }

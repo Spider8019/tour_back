@@ -1,11 +1,9 @@
 const Place = require('../models/attractions')
 
-exports.getPlacesByCategory = (req, res) => {
-    const category = req.query.categoryName; // Assuming categoryName is passed as a query parameter
-    Place.getAllData()
+exports.getPlacesByFilter = (req, res) => { // Assuming categoryName is passed as a query parameter
+    Place.getPlacesByProvidedFilter(req.query)
       .then((data) => {
         const result = data
-          .filter((item) => item.placeCategory == category)
           .map(({ placeName, placeImage }) => ({ placeName, placeImage }))
         res.send(result)
       })
