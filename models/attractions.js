@@ -6,7 +6,7 @@ const entryFeesSchema = new Schema(
 )
 
 const placeSchema = new Schema({
-  placeVisit:{type:Number,default:0},
+  placeVisit: { type: Number, default: 0 },
   placeId: { type: Number, required: true, unique: true },
   placeName: { type: String, required: true, unique: true },
   placeCity: { type: String, required: true },
@@ -35,7 +35,7 @@ const placeSchema = new Schema({
   hashtag: { type: String },
   timings: { type: [String] },
   links: { type: [String] },
-  verified:{type:Boolean,default:false}
+  verified: { type: Boolean, default: false }
 }, {
   timestamps: true
 })
@@ -63,6 +63,8 @@ module.exports = {
     ).exec()
   },
   getPlacesByProvidedFilter: function (filter) {
-    return PlaceTable.find({...filter}).exec()
+    let placeName = filter.placeName;
+    let regex = new RegExp(placeName, 'i'); // 'i' for case-insensitive search
+    return PlaceTable.find({ placeName: regex }).exec();
   }
 }
