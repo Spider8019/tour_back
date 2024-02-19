@@ -65,6 +65,11 @@ module.exports = {
   getPlacesByProvidedFilter: function (filter) {
     let placeName = filter.placeName;
     let regex = new RegExp(placeName, 'i'); // 'i' for case-insensitive search
-    return PlaceTable.find({ placeName: regex }).exec();
+    return PlaceTable.find({
+        $or: [
+            { placeName: regex },
+            { placeCity: regex }
+        ]
+    }).exec();
   }
 }
