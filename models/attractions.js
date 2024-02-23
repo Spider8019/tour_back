@@ -77,4 +77,10 @@ module.exports = {
       .limit(limit)
       .exec()
   },
+  getLatestPlaces: function (limit=10) {
+    return PlaceTable.find({})
+        .sort({ createdAt: -1 }) // Sort by createdAt timestamp in descending order
+        .limit(limit)
+        .exec()
+},
 }
