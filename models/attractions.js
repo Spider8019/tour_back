@@ -55,7 +55,7 @@ module.exports = {
     })
   },
   getAllData: function () {
-    return PlaceTable.find({}).exec()
+    return PlaceTable.find({}).sort({ placeName: 1 }).exec()
   },
   getPlaceByName: function (placeName) {
     return PlaceTable.findOneAndUpdate(
@@ -69,7 +69,7 @@ module.exports = {
     let regex = new RegExp(placeName, 'i') // 'i' for case-insensitive search
     return PlaceTable.find({
       $or: [{ placeName: regex }, { placeCity: regex }],
-    }).exec()
+    }).sort({ placeName: 1 }).exec()
   },
   getTopSearches: function (limit=10) {
     return PlaceTable.find({})
