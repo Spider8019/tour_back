@@ -1,8 +1,8 @@
 const express = require('express')
-const arr = require('./arr')
 const app = express()
 const { connectDB } = require('./connections/mongoose')
 const cors = require('cors')
+// const {quickStart}=require("./gcp/translation")
 
 var placesInACityRouter = require('./routes/placesInACity')
 var placesByFilter = require("./routes/placesByFilter")
@@ -18,6 +18,7 @@ app.use('/placefromacity', placeFromACityRouter)
 app.use('/placesbyfilter',placesByFilter)
 
 app.get('/', async (req, res) => {
+  // quickStart();
   res.send('Hello world')
 })
 
