@@ -3,15 +3,26 @@ const Schema = mongoose.Schema
 
 const eventSchema = new Schema(
   {
-    eventId: { type: Number, unique: true },
     eventName: { type: String, required: true },
     eventDescription: { type: String },
     eventExternalLink: { type: String },
+    eventMediaLinks: { type: [String] ,required:true},
     tillDate: { type: Date, required: true },
-    eventCity: { type: Schema.Types.ObjectId, ref: 'PlaceTable' },
+    eventPlace: { type: Schema.Types.ObjectId, ref: 'PlaceTable' },
+    eventCities: [{
+      type: String,
+      validate: {
+        validator: async function (value) {
+          const places = await mongoose.model('Place').distinct('placeCity');
+          return places.includes(value);
+        },
+        message: props => `${props.value} is not a valid placeCity`,
+      },
+      required: true,
+    }]
   },
   {
-    timestamps: true,
+    timestamps: true, 
   },
 )
 
@@ -26,5 +37,8 @@ module.exports = {
         .then((data) => resolve(data))
         .catch((err) => reject(err))
     })
+  },
+  getAllData: function () {
+    return EventTable.find({}).sort({ tillDate: 1 }).exec()
   },
 }

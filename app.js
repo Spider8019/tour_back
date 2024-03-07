@@ -5,8 +5,9 @@ const cors = require('cors')
 // const {quickStart}=require("./gcp/translation")
 
 var placesInACityRouter = require('./routes/placesInACity')
-var placesByFilter = require("./routes/placesByFilter")
+var placesByFilter = require('./routes/placesByFilter')
 var placeFromACityRouter = require('./routes/placefromacity')
+var eventRouter = require('./routes/event')
 connectDB()
 
 app.use(cors())
@@ -15,14 +16,15 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/placesinacity', placesInACityRouter)
 app.use('/placefromacity', placeFromACityRouter)
-app.use('/placesbyfilter',placesByFilter)
+app.use('/placesbyfilter', placesByFilter)
+app.use('/events', eventRouter)
 
 app.get('/', async (req, res) => {
   // quickStart();
   res.send('Hello world')
 })
 
-app.listen(3000, () => console.log('Server is listening on port 3000'))
+app.listen(5000, () => console.log('Server is listening on port 5000'))
 
 // Error handling middleware
 // app.use((err, req, res, next) => {

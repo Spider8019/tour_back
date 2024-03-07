@@ -36,6 +36,7 @@ const placeSchema = new Schema(
     links: { type: [String] },
     verified: { type: Boolean, default: false },
     averageTimeToVisit: { type: String },
+    nearestState:{type:String}
   },
   {
     timestamps: true,
@@ -79,7 +80,7 @@ module.exports = {
   },
   getLatestPlaces: function (limit=10) {
     return PlaceTable.find({})
-        .sort({ createdAt: -1 }) // Sort by createdAt timestamp in descending order
+        .sort({ updatedAt: -1 }) // Sort by createdAt timestamp in descending order
         .limit(limit)
         .exec()
 },
