@@ -14,7 +14,7 @@ exports.addAEvent = (req, res) => {
 }
 
 exports.getAllEventsInACity = (req, res) => {
-    Event.getAllData()
+    Event.getAllData(req.query)
       .then((data) => {
         res.send(data)
       })

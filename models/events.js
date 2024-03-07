@@ -6,23 +6,26 @@ const eventSchema = new Schema(
     eventName: { type: String, required: true },
     eventDescription: { type: String },
     eventExternalLink: { type: String },
-    eventMediaLinks: { type: [String] ,required:true},
+    eventMediaLinks: { type: [String], required: true },
     tillDate: { type: Date, required: true },
     eventPlace: { type: Schema.Types.ObjectId, ref: 'PlaceTable' },
-    eventCities: [{
-      type: String,
-      validate: {
-        validator: async function (value) {
-          const places = await mongoose.model('Place').distinct('placeCity');
-          return places.includes(value);
+    eventLocation: { type: String },
+    eventCities: [
+      {
+        type: String,
+        validate: {
+          validator: async function (value) {
+            const places = await mongoose.model('Place').distinct('placeCity')
+            return places.includes(value)
+          },
+          message: (props) => `${props.value} is not a valid placeCity`,
         },
-        message: props => `${props.value} is not a valid placeCity`,
+        required: true,
       },
-      required: true,
-    }]
+    ],
   },
   {
-    timestamps: true, 
+    timestamps: true,
   },
 )
 
@@ -38,7 +41,10 @@ module.exports = {
         .catch((err) => reject(err))
     })
   },
-  getAllData: function () {
-    return EventTable.find({}).sort({ tillDate: 1 }).exec()
+  getAllData: function (filter) {
+    let cityName = filter.cityName
+    return EventTable.find({ eventCities: { $in: [cityName] } })
+      .sort({ tillDate: 1 })
+      .exec()
   },
 }
