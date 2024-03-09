@@ -21,6 +21,7 @@ const placeSchema = new Schema(
       content_2: { type: String, required: true },
     },
     moreImages: { type: [String], required: true },
+    iframe_content: { type: String },
     entryFees: {
       indian: {
         child: { type: Number, required: true },
@@ -36,7 +37,7 @@ const placeSchema = new Schema(
     links: { type: [String] },
     verified: { type: Boolean, default: false },
     averageTimeToVisit: { type: String },
-    nearestState:{type:String}
+    nearestState: { type: String },
   },
   {
     timestamps: true,
@@ -70,18 +71,20 @@ module.exports = {
     let regex = new RegExp(placeName, 'i') // 'i' for case-insensitive search
     return PlaceTable.find({
       $or: [{ placeName: regex }, { placeCity: regex }],
-    }).sort({ placeName: 1 }).exec()
+    })
+      .sort({ placeName: 1 })
+      .exec()
   },
-  getTopSearches: function (limit=10) {
+  getTopSearches: function (limit = 10) {
     return PlaceTable.find({})
       .sort({ placeVisit: -1 }) // Sort by placeVisit in descending order
       .limit(limit)
       .exec()
   },
-  getLatestPlaces: function (limit=10) {
+  getLatestPlaces: function (limit = 10) {
     return PlaceTable.find({})
-        .sort({ updatedAt: -1 }) // Sort by createdAt timestamp in descending order
-        .limit(limit)
-        .exec()
-},
+      .sort({ updatedAt: -1 }) // Sort by createdAt timestamp in descending order
+      .limit(limit)
+      .exec()
+  },
 }

@@ -8,7 +8,7 @@ const eventSchema = new Schema(
     eventExternalLink: { type: String },
     eventMediaLinks: { type: [String], required: true },
     tillDate: { type: Date, required: true },
-    eventPlace: { type: Schema.Types.ObjectId, ref: 'PlaceTable' },
+    eventPlace: { type: Schema.Types.ObjectId, ref: 'Place' },
     eventLocation: { type: String },
     eventCities: [
       {
@@ -44,6 +44,7 @@ module.exports = {
   getAllData: function (filter) {
     let cityName = filter.cityName
     return EventTable.find({ eventCities: { $in: [cityName] } })
+      .populate({path:'eventPlace',select:"placeName -_id"})
       .sort({ tillDate: 1 })
       .exec()
   },
