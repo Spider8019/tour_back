@@ -21,7 +21,7 @@ const placeSchema = new Schema(
       content_2: { type: String, required: true },
     },
     moreImages: { type: [String], required: true },
-    iframe_content: { type: String },
+    iframe_content: { type: String },//url
     entryFees: {
       indian: {
         child: { type: Number, required: true },
@@ -37,7 +37,7 @@ const placeSchema = new Schema(
     links: { type: [String] },
     verified: { type: Boolean, default: false },
     averageTimeToVisit: { type: String },
-    nearestState: { type: String },
+    nearestStation: { type: String },
   },
   {
     timestamps: true,

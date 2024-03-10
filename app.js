@@ -8,6 +8,7 @@ var placesInACityRouter = require('./routes/placesInACity')
 var placesByFilter = require('./routes/placesByFilter')
 var placeFromACityRouter = require('./routes/placefromacity')
 var eventRouter = require('./routes/event')
+var quickAttractionsRouter = require('./routes/quickAttractions')
 connectDB()
 
 app.use(cors())
@@ -18,6 +19,7 @@ app.use('/placesinacity', placesInACityRouter)
 app.use('/placefromacity', placeFromACityRouter)
 app.use('/placesbyfilter', placesByFilter)
 app.use('/events', eventRouter)
+app.use('/quickattractions', quickAttractionsRouter)
 
 app.get('/', async (req, res) => {
   // quickStart();
