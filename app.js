@@ -26,6 +26,32 @@ app.get('/', async (req, res) => {
   res.send('Hello world')
 })
 
+async function readJsonFromGithub(url) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error('Failed to fetch JSON')
+    }
+    const json = await response.json()
+    return json
+  } catch (error) {
+    console.error('Error reading JSON from GitHub:', error.message)
+    return null
+  }
+}
+
+app.get('/configuration', async (req, res) => {
+  const url =
+    'https://raw.githubusercontent.com/Spider8019/json_config/master/config.json'
+
+  readJsonFromGithub(url).then((data) => {
+    if (data) {
+      console.log('JSON data:', data)
+      // Process the JSON data here
+    }
+  })  
+})
+
 app.listen(5000, () => console.log('Server is listening on port 5000'))
 
 // Error handling middleware

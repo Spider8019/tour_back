@@ -21,7 +21,7 @@ const placeSchema = new Schema(
       content_2: { type: String, required: true },
     },
     moreImages: { type: [String], required: true },
-    iframe_content: { type: String },//url
+    iframe_content: { type: String }, //url
     entryFees: {
       indian: {
         child: { type: Number, required: true },
@@ -86,5 +86,56 @@ module.exports = {
       .sort({ createdAt: -1 }) // Sort by createdAt timestamp in descending order
       .limit(limit)
       .exec()
+  },
+  getAllCities: async function () {
+    try {
+      const data = await PlaceTable.aggregate([
+        {
+          $group: {
+            _id: '$placeCity',
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            city: '$_id',
+            count: 1,
+            tier: {
+              $switch: {
+                branches: [
+                  { case: { $gte: ['$count', 15] }, then: 'tier1' },
+                  { case: { $gte: ['$count', 5] }, then: 'tier2' },
+                ],
+                default: 'tier3',
+              },
+            },
+          },
+        },
+        {
+          $group: {
+            _id: '$tier',
+            cities: { $addToSet: '$city' },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            tier: '$_id',
+            cities: 1,
+          },
+        },
+      ]).exec()
+
+      const result = data.reduce((acc, obj) => {
+        acc[obj.tier] = obj.cities
+        return acc
+      }, {})
+
+      return result
+    } catch (error) {
+      console.error('Error in getAllCities:', error)
+      return null
+    }
   },
 }

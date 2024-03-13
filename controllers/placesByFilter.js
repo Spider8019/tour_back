@@ -46,3 +46,15 @@ exports.getLatestPlaces = (req, res) => { // Assuming categoryName is passed as 
       res.status(500).send('Internal Server Error' + err)
     })
 }
+
+exports.getAllCities = (req, res) => { // Assuming categoryName is passed as a query parameter
+  Place.getAllCities()
+    .then((data) => {
+      
+      res.send(data)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500).send('Internal Server Error' + err)
+    })
+}
