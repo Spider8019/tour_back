@@ -9,6 +9,8 @@ var placesByFilter = require('./routes/placesByFilter')
 var placeFromACityRouter = require('./routes/placefromacity')
 var eventRouter = require('./routes/event')
 var quickAttractionsRouter = require('./routes/quickAttractions')
+var readJsonFromGithub = require('./helpers/readJsonFromGithub')
+
 connectDB()
 
 app.use(cors())
@@ -26,19 +28,7 @@ app.get('/', async (req, res) => {
   res.send('Hello world')
 })
 
-async function readJsonFromGithub(url) {
-  try {
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error('Failed to fetch JSON')
-    }
-    const json = await response.json()
-    return json
-  } catch (error) {
-    console.error('Error reading JSON from GitHub:', error.message)
-    return null
-  }
-}
+
 
 app.get('/configuration', async (req, res) => {
   const url =
