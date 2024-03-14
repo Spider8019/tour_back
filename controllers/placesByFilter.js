@@ -5,10 +5,10 @@ exports.getPlacesByFilter = (req, res) => {
   // Assuming categoryName is passed as a query parameter
   Place.getPlacesByProvidedFilter(req.query)
     .then((data) => {
-      const result = data.map(({ placeName, placeImage, placeCity }) => ({
+      const result = data.map(({ placeName, placeImage, placeCity,city }) => ({
         placeName,
         placeImage,
-        placeCity,
+        placeCity
       }))
       res.send(result)
     })
