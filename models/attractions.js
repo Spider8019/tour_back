@@ -104,7 +104,7 @@ module.exports = {
             tier: {
               $switch: {
                 branches: [
-                  { case: { $gte: ['$count', 15] }, then: 'tier1' },
+                  { case: { $gte: ['$count', 12] }, then: 'tier1' },
                   { case: { $gte: ['$count', 5] }, then: 'tier2' },
                 ],
                 default: 'tier3',
