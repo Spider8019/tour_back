@@ -58,7 +58,7 @@ module.exports = {
     })
   },
   getAllData: function () {
-    return PlaceTable.find({placeEnabled:true}).sort({ placeName: 1 }).exec()
+    return PlaceTable.find({}).sort({ placeName: 1 }).exec()
   },
   getPlaceByName: function (placeName) {
     return PlaceTable.findOneAndUpdate(
@@ -91,6 +91,14 @@ module.exports = {
   getAllCities: async function () {
     try {
       const data = await PlaceTable.aggregate([
+        {
+          $match: {
+            $or: [
+              { placeEnabled: true },
+              { placeEnabled: { $exists: false } }
+            ]
+          }
+        },
         {
           $group: {
             _id: '$placeCity',
@@ -139,4 +147,5 @@ module.exports = {
       return null
     }
   },
+
 }
