@@ -11,6 +11,7 @@ const placeSchema = new Schema(
     placeCity: { type: String, required: true },
     placeCategory: { type: String, required: true },
     placeImage: { type: String, required: true },
+    placeEnabled: { type: Boolean, default: true },
     placeLocation: {
       latitude: { type: Number, required: true },
       longitude: { type: Number, required: true },
@@ -57,7 +58,7 @@ module.exports = {
     })
   },
   getAllData: function () {
-    return PlaceTable.find({}).sort({ placeName: 1 }).exec()
+    return PlaceTable.find({placeEnabled:true}).sort({ placeName: 1 }).exec()
   },
   getPlaceByName: function (placeName) {
     return PlaceTable.findOneAndUpdate(
@@ -67,8 +68,8 @@ module.exports = {
     ).exec()
   },
   getPlacesByProvidedFilter: function (filter) {
-    let placeName = filter.placeName;
-    let regex = new RegExp(placeName, 'i'); // 'i' for case-insensitive search
+    let placeName = filter.placeName
+    let regex = new RegExp(placeName, 'i') // 'i' for case-insensitive search
     return PlaceTable.find({
       $or: [{ placeName: regex }, { placeCity: regex }],
     })
