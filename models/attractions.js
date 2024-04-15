@@ -8,9 +8,12 @@ const placeSchema = new Schema(
     placeVisit: { type: Number, default: 0 },
     placeId: { type: Number, required: true, unique: true },
     placeName: { type: String, required: true, unique: true },
+    placeShortName: { type: String },
     placeCity: { type: String, required: true },
     placeCategory: { type: String, required: true },
     placeImage: { type: String, required: true },
+    placeAliasImage: [{ type: String, default: [] }],
+    placeIsHidden: { type: Boolean, default: false },
     placeEnabled: { type: Boolean, default: true },
     placeLocation: {
       latitude: { type: Number, required: true },
@@ -93,11 +96,8 @@ module.exports = {
       const data = await PlaceTable.aggregate([
         {
           $match: {
-            $or: [
-              { placeEnabled: true },
-              { placeEnabled: { $exists: false } }
-            ]
-          }
+            $or: [{ placeEnabled: true }, { placeEnabled: { $exists: false } }],
+          },
         },
         {
           $group: {
@@ -147,5 +147,4 @@ module.exports = {
       return null
     }
   },
-
 }

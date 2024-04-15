@@ -6,6 +6,7 @@ const quickAttractionSchema = new Schema(
     labelForTitle: { type: String, required: true },
     title: { type: String, required: true, unique: true },
     attractions: [{ type: Schema.Types.ObjectId, ref: 'Place' }],
+    attractionId: [{ type: Number, default: 0 }],
     enabled: { type: Boolean, default: true },
     tillDate: { type: Date },
   },
@@ -33,7 +34,7 @@ module.exports = {
     return QuickAttractionsTable.find({ enabled: true })
       .populate({
         path: 'attractions',
-        select: 'placeName placeCity placeImage -_id',
+        select: 'placeName placeCity placeImage placeAliasImage -_id',
       })
       .sort({ createdAt: 1 })
       .exec()

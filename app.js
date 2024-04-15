@@ -9,7 +9,9 @@ var placesByFilter = require('./routes/placesByFilter')
 var placeFromACityRouter = require('./routes/placefromacity')
 var eventRouter = require('./routes/event')
 var quickAttractionsRouter = require('./routes/quickAttractions')
+var touristGuideRouter=require("./routes/touristGuide")
 var readJsonFromGithub = require('./helpers/readJsonFromGithub')
+var rentalGaadiRouter=require("./routes/rentalGaadi")
 
 connectDB()
 
@@ -22,6 +24,8 @@ app.use('/placefromacity', placeFromACityRouter)
 app.use('/placesbyfilter', placesByFilter)
 app.use('/events', eventRouter)
 app.use('/quickattractions', quickAttractionsRouter)
+app.use('/touristguide',touristGuideRouter)
+app.use('/rentalgaadi',rentalGaadiRouter)
 
 app.get('/', async (req, res) => {
   // quickStart();
